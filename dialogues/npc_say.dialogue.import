@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bi2wp5hcwjwt5"
+path="res://.godot/imported/npc_say.dialogue-6f925e3fbb61a563a26e080d2258a8c2.tres"
+
+[deps]
+
+source_file="res://game/dialogues/npc_say.dialogue"
+dest_files=["res://.godot/imported/npc_say.dialogue-6f925e3fbb61a563a26e080d2258a8c2.tres"]
+
+[params]
+
+defaults=true

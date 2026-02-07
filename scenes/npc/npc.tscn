@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://c6if2h27ft8d3"]
+
+[ext_resource type="Script" uid="uid://po5ikk1qhkax" path="res://game/scripts/npc/npc_detect.gd" id="1_lwy1o"]
+[ext_resource type="Texture2D" uid="uid://7dgod220ojmw" path="res://game/assets/npcSprite.png" id="1_rl86i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwy1o"]
+atlas = ExtResource("1_rl86i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxasi"]
+atlas = ExtResource("1_rl86i")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awnhv"]
+atlas = ExtResource("1_rl86i")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46weo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwy1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxasi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awnhv")
+}],
+"loop": true,
+"name": &"animacion",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dylku"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fop6h"]
+size = Vector2(34, 27)
+
+[node name="npc" type="Area2D" unique_id=1320058897 node_paths=PackedStringArray("npc_area", "animation_npc", "animtimer")]
+script = ExtResource("1_lwy1o")
+npc_area = NodePath(".")
+animation_npc = NodePath("StaticBody2D/animacionNpc")
+animtimer = NodePath("Animtimer")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=387559801]
+
+[node name="animacionNpc" type="AnimatedSprite2D" parent="StaticBody2D" unique_id=511155476]
+sprite_frames = SubResource("SpriteFrames_46weo")
+
+[node name="colicionnpc" type="CollisionShape2D" parent="StaticBody2D" unique_id=1651014304]
+shape = SubResource("RectangleShape2D_dylku")
+
+[node name="area" type="CollisionShape2D" parent="." unique_id=1174936831]
+shape = SubResource("RectangleShape2D_fop6h")
+
+[node name="Animtimer" type="Timer" parent="." unique_id=1555542705]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

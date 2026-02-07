@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cxbv80dbdde3a"]
+
+[ext_resource type="Script" uid="uid://cgnprne3sxqml" path="res://game/scripts/player/player.gd" id="1_fbnkq"]
+[ext_resource type="Texture2D" uid="uid://bvfv82roujt0j" path="res://game/assets/jugador.png" id="1_mbosw"]
+[ext_resource type="AudioStream" uid="uid://druof4mr1acro" path="res://game/sounds/Sneaky%20Adventure.mp3" id="3_7cuwy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkr20"]
+atlas = ExtResource("1_mbosw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5gyh"]
+atlas = ExtResource("1_mbosw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy5fi"]
+atlas = ExtResource("1_mbosw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvpx6"]
+atlas = ExtResource("1_mbosw")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nggnu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkr20")
+}],
+"loop": true,
+"name": &"adelante",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5gyh")
+}],
+"loop": true,
+"name": &"atras",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy5fi")
+}],
+"loop": true,
+"name": &"derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvpx6")
+}],
+"loop": true,
+"name": &"izquierda",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6cxe"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbnkq"]
+size = Vector2(26, 26)
+
+[node name="player" type="CharacterBody2D" unique_id=694347435 node_paths=PackedStringArray("musica", "animacion")]
+script = ExtResource("1_fbnkq")
+musica = NodePath("music")
+animacion = NodePath("animacionPlayer")
+
+[node name="animacionPlayer" type="AnimatedSprite2D" parent="." unique_id=1931833681]
+sprite_frames = SubResource("SpriteFrames_nggnu")
+animation = &"adelante"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1945695893]
+shape = SubResource("RectangleShape2D_b6cxe")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1466965215]
+zoom = Vector2(5.955, 5.808)
+
+[node name="AreaPlayer" type="Area2D" parent="." unique_id=1705363059]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaPlayer" unique_id=1856765075]
+shape = SubResource("RectangleShape2D_fbnkq")
+
+[node name="music" type="AudioStreamPlayer2D" parent="." unique_id=1436389857]
+stream = ExtResource("3_7cuwy")

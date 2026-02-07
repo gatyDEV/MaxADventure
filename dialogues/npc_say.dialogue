@@ -1,0 +1,17 @@
+~ start  
+%3 ¡Hola buenos dias!
+%3 ¡Que tal!
+%3 ¡El dia esta bueno!
+%3 ¡Hola señor!
+player: *¿Como reaccionaras?*
+- Responderle con insulto
+	%3 ¡Vete al diablo!
+	%3 ¡Con esa boca comes!
+	%3 ¡Ni se te acurra buscarme!
+	%3 ¡Lavate esa boca con jabon!
+- Responderle educadamente
+	%3 ¡Grasias!
+	%3 ¡Seamos amigos!
+	%3 ¡Muy bien!
+	%3 ¡Grasias caballero!
+=> END

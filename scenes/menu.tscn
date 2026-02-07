@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://dhyu6fttnu7ac"]
+
+[ext_resource type="Script" uid="uid://c1alth611khai" path="res://game/scripts/menu.gd" id="1_ugwst"]
+[ext_resource type="Texture2D" uid="uid://d0q8m8volmhmg" path="res://icon.svg" id="2_octcs"]
+[ext_resource type="Texture2D" uid="uid://bgi04on8uy78q" path="res://game/assets/tilesmaps.png" id="2_ugwst"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71yso"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugwst"]
+bg_color = Color(0.09, 0.0819, 0.0819, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_octcs"]
+bg_color = Color(0.12, 0.12, 0.12, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfcbr"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3v152"]
+bg_color = Color(0.09019608, 0.08235294, 0.08235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhl36"]
+bg_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhhxb"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s7ov"]
+bg_color = Color(0.09019608, 0.08235294, 0.08235294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ionrv"]
+bg_color = Color(0.12156863, 0.12156863, 0.12156863, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_71yso"]
+load_path = "res://.godot/imported/jugador.png-e31ec3c3c055fbe041fae11acb3bbbba.ctex"
+
+[node name="Menu" type="Control" unique_id=1177770924]
+z_as_relative = false
+layout_mode = 3
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 0.30395508
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_ugwst")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=309646888]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0.02994629, 0.9147656, 0.9582813, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1395685028]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.5
+offset_right = 233.5
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.09063721, 0.7734375, 0.19732475, 1)
+theme_override_font_sizes/font_size = 63
+text = "MaxAdventure"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ColorRect" unique_id=639519478]
+position = Vector2(1070, -37)
+amount = 4
+texture = ExtResource("2_octcs")
+lifetime = 1.59
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="ColorRect" unique_id=690285632]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.1875
+offset_top = -119.1875
+offset_right = 140.1875
+offset_bottom = 118.1875
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 11
+
+[node name="singleplayer" type="Button" parent="ColorRect/ButtonsContainer" unique_id=707501952]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_71yso")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ugwst")
+theme_override_styles/hover = SubResource("StyleBoxFlat_octcs")
+text = "Singleplayer"
+
+[node name="settings" type="Button" parent="ColorRect/ButtonsContainer" unique_id=173983695]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_qfcbr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3v152")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qhl36")
+text = "settings
+"
+
+[node name="quit" type="Button" parent="ColorRect/ButtonsContainer" unique_id=690670343]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_fhhxb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0s7ov")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ionrv")
+text = "quit"
+
+[node name="sprites" type="VBoxContainer" parent="ColorRect" unique_id=1171124868]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="jugador" type="Sprite2D" parent="ColorRect/sprites" unique_id=550038196]
+position = Vector2(176.00002, 358)
+scale = Vector2(12.3984375, 12.421875)
+texture = SubResource("CompressedTexture2D_71yso")
+hframes = 4
+vframes = 2
+
+[node name="pasto" type="Sprite2D" parent="ColorRect/sprites" unique_id=206351861]
+position = Vector2(203.00002, 653.5)
+scale = Vector2(25.363281, 28.562502)
+texture = ExtResource("2_ugwst")
+hframes = 8
+vframes = 8
+
+[node name="lago" type="Sprite2D" parent="ColorRect/sprites" unique_id=1901984373]
+position = Vector2(975.07825, 681)
+scale = Vector2(71.490234, 25.124998)
+texture = ExtResource("2_ugwst")
+hframes = 8
+vframes = 8
+frame = 8
+
+[node name="texts" type="VBoxContainer" parent="ColorRect" unique_id=1148556276]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="ColorRect/texts" unique_id=1315787946]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.028274536, 0.14628434, 0.42578125, 1)
+theme_override_font_sizes/font_size = 28
+text = "Creator: GatyDEV
+Engine: Godot 4.6
+"
+
+[connection signal="pressed" from="ColorRect/ButtonsContainer/singleplayer" to="." method="_on_singleplayer_pressed"]
+[connection signal="pressed" from="ColorRect/ButtonsContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="ColorRect/ButtonsContainer/quit" to="." method="_on_quit_pressed"]
